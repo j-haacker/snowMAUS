@@ -71,3 +71,23 @@ def melt(
         0,
         melt_rate * (temperature_daily_minimum + np.abs(threshold_temperature_minimum))
     )
+
+
+def sublime(
+    snowcover_previous_day: np.typing.ArrayLike,
+    threshold_snowcover: float = 20
+) -> np.typing.ArrayLike:
+    """Calculate sublimed snow
+
+    If the snow cover exceeds `threshold_snowcover`, 1 mm is sublimed on the
+    next day.
+
+    :param snowcover_previous_day: Snow cover of the previous day in kg/m²
+    :type snowcover_previous_day: np.typing.ArrayLike
+    :param threshold_snowcover: Snow cover thickness above which sublimation
+        takes place, defaults to 20 kg/m²
+    :type threshold_snowcover: float, optional
+    :return: Sublimed snow in kg/m²
+    :rtype: np.typing.ArrayLike
+    """
+    return np.where(snowcover_previous_day > threshold_snowcover, 1, 0)
