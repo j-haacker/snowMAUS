@@ -1,9 +1,9 @@
 import numpy as np
 
-__all__ = ["accumulation", "melt"]
+__all__ = ["snowfall", "meltwater_production", "sublimed_snowcover"]
 
 
-def accumulation(
+def snowfall(
         precipitation: np.typing.ArrayLike,
         temperature_daily_minimum: np.typing.ArrayLike,
         threshold_temperature_upper: float = 0,
@@ -36,7 +36,7 @@ def accumulation(
     )
 
 
-def melt(
+def meltwater_production(
         temperature_daily_minimum: np.typing.ArrayLike,
         temperature_daily_maximum: np.typing.ArrayLike,
         threshold_temperature_minimum: float = -12,
@@ -73,7 +73,7 @@ def melt(
     )
 
 
-def sublime(
+def sublimed_snowcover(
     snowcover_previous_day: np.typing.ArrayLike,
     threshold_snowcover: float = 20
 ) -> np.typing.ArrayLike:
