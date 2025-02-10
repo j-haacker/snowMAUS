@@ -1,0 +1,19 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "snowmaus"
+authors = [{name = "Jan Haacker", email = "jan.haacker@boku.ac.at"}]
+readme = "README.md"
+license = {file = "LICENSE.txt"}
+classifiers = ["License :: OSI Approved :: MIT License"]
+dynamic = ["version", "description"]
+keywords = ["snowmodel"]
+
+dependencies = ["numpy"]
+
+[project.urls]
+Repository = "https://github.com/j-haacker/snowmaus.git"
+Documentation = "https://j-haacker.github.io/snowmaus"
+Issues = "https://github.com/j-haacker/snowmaus/issues"
